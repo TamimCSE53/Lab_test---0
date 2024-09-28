@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int gcd (int a, int b)
+{
+    if (b == 0) return a;
+    gcd(b, a%b);
+}
+
+int main()
+{
+    /// Euclid Algo of GCD
+
+    int x;
+    cin >> x;
+    int a[x];
+    int gc;
+    for (int i=0; i<x; i++) {
+        cin >> a[i];
+        if (i == 0) gc = a[0];
+        else {
+            gc = gcd(gc, a[i]);
+        }
+    }
+    cout << gc << endl;
+
+    return 0;
+}
