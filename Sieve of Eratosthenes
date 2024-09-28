@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    /// Sieve of Eratosthenes
+
+    int x;
+    cin >> x;
+    int pr[x];
+    memset(pr, 0, sizeof(pr));
+    for (int i=2; i*i<=x; i++) {
+        if (pr[i] == 0) {
+            for (int j=i*i; j<=x; j+=i) {
+                pr[j] = 1;
+            }
+        }
+    }
+    cout << "All primes: \n";
+    for (int i=2; i<=x; i++) {
+        if (pr[i] == 0) {
+            cout << i << endl;
+        }
+    }
+
+
+
+    return 0;
+}
