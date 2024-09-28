@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    /// Primality Test
+
+    int x;
+    cin >> x;
+    bool f = true;
+    for (int i=2; i*i<=x; i++) {
+        if (x % i == 0) {
+            f = false;
+            break;
+        }
+    }
+    if (!f) cout << "Not Prime\n";
+    else cout << "Prime\n";
+
+    return 0;
+}
